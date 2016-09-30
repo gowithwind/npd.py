@@ -80,5 +80,5 @@ def NPDScan(model, I, minFace, maxFace):
                 pPixel += winStep
                 if(s == numStages -1):# // a face detected
                     print 'face=',c,r,pWinSize[k]
-                    rects.append([c,r,_score,pWinSize[k],pWinSize[k]])
+                    rects.append([c,r,_score,c+pWinSize[k],r+pWinSize[k]])
     return rects

@@ -5,9 +5,10 @@ from NPDScan import NPDScan
 from nms import nms
 import sys
 
+
 minFace = 20
 maxFace = 4000
-overlap = 0.6
+overlap = 0.5
 imgFile = sys.argv[1]
 modelFile = 'model_frontal.mat'
 
@@ -25,7 +26,7 @@ print('%s faces detected.\n' % numFaces)
 rects = nms(rects,overlap)
 if numFaces > 0:
     for rect in rects:
-        cv2.rectangle(img, (rect[0], rect[1]), (rect[0]+rect[3], rect[1]+rect[4]), (0,255,0), 2)
+        cv2.rectangle(img, (rect[0], rect[1]), (rect[3], rect[4]), (0,255,0), 2)
 cv2.namedWindow('img')
 cv2.imshow('img',img)
 cv2.waitKey(0)
