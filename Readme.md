@@ -2,4 +2,7 @@
 
 `A Fast and Accurate Unconstrained Face Detector`
 
-# need more work to speedup
+# need more work to speedup and nms bug
+
+# License
+MIT License

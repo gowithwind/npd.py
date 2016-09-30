@@ -5,7 +5,7 @@ from NPDScan import NPDScan
 from nms import nms
 import sys
 
-minFace = 40
+minFace = 20
 maxFace = 4000
 overlap = 0.6
 imgFile = sys.argv[1]
