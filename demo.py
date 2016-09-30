@@ -4,6 +4,7 @@ import numpy as np
 from NPDScan import NPDScan
 from nms import nms
 import sys
+import time
 
 
 minFace = 20
@@ -19,7 +20,9 @@ f = h5py.File(modelFile,'r')
 npdModel = {n:np.array(v) for n,v in f.get('npdModel').items()}
 img = cv2.imread(imgFile)
 I = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+startTime = time.time()
 rects = NPDScan(npdModel, I, minFace, maxFace)
+print 'cost:',time.time() - startTime
 # rects = [[10,10,20,20]]
 numFaces = len(rects)
 print('%s faces detected.\n' % numFaces)
